@@ -71,6 +71,20 @@
   #touchPause { display: none; position: absolute; z-index: 3; top: max(12px, env(safe-area-inset-top)); left: 50%; transform: translateX(-50%);
     width: 48px; height: 42px; border: 1px solid #e8e0cf66; border-radius: 8px; color: var(--bone); background: #17121bcc;
     font: 700 16px/1 ui-sans-serif, sans-serif; pointer-events: auto; }
+  #touchControls { display: none; position: absolute; inset: 0; z-index: 3; pointer-events: none; }
+  .touchStick { position: absolute; bottom: max(9px, env(safe-area-inset-bottom)); width: clamp(76px, 10.5vw, 90px); aspect-ratio: 1;
+    border: 2px solid #e8e0cf66; border-radius: 50%; background: #0d0a101a; box-shadow: inset 0 0 0 1px #0006, 0 2px 8px #0004;
+    opacity: 0.46; transition: opacity 90ms linear, border-color 90ms linear; }
+  .touchStick.left { left: max(10px, env(safe-area-inset-left)); }
+  .touchStick.right { right: max(10px, env(safe-area-inset-right)); }
+  .touchStick.active { opacity: 0.88; border-color: #f4ead1aa; }
+  .touchStickLabel { position: absolute; top: 8px; left: 0; right: 0; text-align: center; color: #fff8e8b8;
+    font: 800 8px/1 ui-sans-serif, sans-serif; letter-spacing: 0.7px; text-shadow: 0 1px 2px #000; }
+  .touchStickKnob { position: absolute; left: 50%; top: 50%; width: 32px; height: 32px; transform: translate(-50%, -50%);
+    display: grid; place-items: center; border: 1px solid #fff8e8aa; border-radius: 50%; color: #fff8e8;
+    background: #241c2688; box-shadow: 0 2px 6px #0008; font: 900 19px/1 ui-sans-serif, sans-serif; }
+  .touchStickHint { position: absolute; left: 0; right: 0; bottom: 7px; text-align: center; color: #fff8e89c;
+    font: 800 7px/1 ui-sans-serif, sans-serif; letter-spacing: 0.45px; text-shadow: 0 1px 2px #000; }
   #fightingSandboxBar { position: absolute; z-index: 4; left: 50%; bottom: 10%; transform: translateX(-50%);
     display: flex; align-items: center; gap: 6px; padding: 7px; pointer-events: auto;
     color: var(--bone); background: #0d0a10e8; border: 1px solid #b4552d99; box-shadow: 0 5px 18px #000b; }
@@ -82,13 +96,19 @@
 
   @media (pointer: coarse), (max-width: 760px) {
     #touchPause { display: block; }
+    #touchControls { display: block; }
+    #fightingSandboxBar { display: none !important; }
     #hint { display: none; }
-    .bars { top: max(3%, env(safe-area-inset-top)); width: 42%; padding: 8px 9px 7px; }
-    .name { font-size: 15px; font-weight: 800; }
-    .weapon { font-size: 13px; }
-    .bar { height: 16px; }
+    .bars { top: max(2%, env(safe-area-inset-top)); width: 39%; padding: 5px 7px 4px; }
+    .name { font-size: 12px; font-weight: 800; margin-bottom: 3px; }
+    .weapon, .staminaWarn { display: none; }
+    .bar { height: 13px; margin-bottom: 2px; }
+    .bar.stamina { height: 12px; }
+    .barLabel, .barValue { font-size: 9px; }
   }
   body.touchPreview #touchPause { display: block; }
+  body.touchPreview #touchControls { display: block; }
+  body.touchPreview #fightingSandboxBar { display: none !important; }
   body.touchPreview #hint { display: none; }
 
   /* ---------- Screens ---------- */
@@ -185,7 +205,7 @@
     .homeActions { grid-template-columns: 1fr; max-height: 55vh; overflow-y: auto; padding: 0 4px 6px; }
   }
 </style>
-  <script type="module" crossorigin src="./assets/index-ExbdM2ZM.js"></script>
+  <script type="module" crossorigin src="./assets/index-DN7dz3uG.js"></script>
 </head>
 <body>
 <div id="app">
@@ -219,6 +239,18 @@
       <div id="tut" class="hidden"></div>
       <div id="countdown" class="hidden">3</div>
       <button id="touchPause" type="button" aria-label="Pause">Ⅱ</button>
+      <div id="touchControls" aria-hidden="true">
+        <div id="touchStickL" class="touchStick left">
+          <span class="touchStickLabel">SHIELD</span>
+          <span class="touchStickKnob">‹</span>
+          <span class="touchStickHint">TAP / HOLD: BACK</span>
+        </div>
+        <div id="touchStickR" class="touchStick right">
+          <span class="touchStickLabel">WEAPON</span>
+          <span class="touchStickKnob">›</span>
+          <span class="touchStickHint">TAP / HOLD: GO</span>
+        </div>
+      </div>
       <div id="mouseAimDot" aria-hidden="true"></div>
     </div>
 
