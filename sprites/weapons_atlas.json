@@ -1,0 +1,26 @@
+{
+  "image": "weapons_atlas.png",
+  "keyedImage": "weapons_atlas_keyed.png",
+  "atlasWidth": 2172,
+  "atlasHeight": 724,
+  "rects": {
+    "dagger": {
+      "x": 57,
+      "y": 333,
+      "w": 347,
+      "h": 65
+    },
+    "sword": {
+      "x": 602,
+      "y": 274,
+      "w": 799,
+      "h": 183
+    },
+    "mace": {
+      "x": 1547,
+      "y": 294,
+      "w": 589,
+      "h": 143
+    }
+  }
+}

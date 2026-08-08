@@ -1,0 +1,15 @@
+{
+  "keyedImage": "fighter_unarmored_a.png",
+  "removeLightNeutralBackdrop": true,
+  "rects": {
+    "head": { "x": 640, "y": 8, "w": 180, "h": 185 },
+    "torso": { "x": 638, "y": 236, "w": 190, "h": 210 },
+    "pelvis": { "x": 646, "y": 450, "w": 184, "h": 118 },
+    "upperArm": { "x": 250, "y": 62, "w": 155, "h": 194 },
+    "forearm": { "x": 248, "y": 264, "w": 104, "h": 140 },
+    "hand": { "x": 158, "y": 615, "w": 88, "h": 130 },
+    "thigh": { "x": 490, "y": 465, "w": 120, "h": 205 },
+    "shin": { "x": 488, "y": 660, "w": 105, "h": 210 },
+    "foot": { "x": 248, "y": 870, "w": 150, "h": 112 }
+  }
+}

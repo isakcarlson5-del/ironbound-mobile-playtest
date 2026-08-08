@@ -1,0 +1,48 @@
+{
+  "arenas": {
+    "bramble": {
+      "image": "arena_riverside_chunky_v2.png",
+      "horizon": 0.75
+    },
+    "copper": {
+      "image": "arena_copper.png",
+      "horizon": 0.73
+    },
+    "rime": {
+      "image": "arena_rime.png",
+      "horizon": 0.71
+    },
+    "ember": {
+      "image": "arena_pixel_volcanic.png",
+      "horizon": 0.54
+    },
+    "chunky": {
+      "image": "arena_riverside_chunky_v2.png",
+      "horizon": 0.75
+    },
+    "chunkyCoarse": {
+      "image": "arena_riverside_chunky_v3.png",
+      "horizon": 0.75
+    }
+  },
+  "fighterAtlas": "fighter_atlas.json",
+  "armorFighterAtlases": {
+    "padded": "fighter_padded_atlas_v1.json",
+    "mail": "fighter_mail_atlas_v1.json"
+  },
+  "unarmoredFighterAtlas": "fighter_unarmored_chunky_b.json",
+  "unarmoredFighterCoarseAtlas": "fighter_unarmored_coarse_c.json",
+  "enemyFighterAtlases": {
+    "light-male": "fighter_unarmored_chunky_b.json",
+    "dark-male": "fighter_enemy_dark_male.json",
+    "light-female": "fighter_enemy_light_female.json",
+    "dark-female": "fighter_enemy_dark_female.json"
+  },
+  "weaponsAtlas": "weapons_atlas.json",
+  "shield": "shield_heater.png",
+  "flailParts": {
+    "handle": "flail_handle.png",
+    "link": "flail_link.png",
+    "ball": "flail_ball.png"
+  }
+}
