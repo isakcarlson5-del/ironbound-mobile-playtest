@@ -97,7 +97,12 @@
   @media (pointer: coarse), (max-width: 760px) {
     #touchPause { display: block; }
     #touchControls { display: block; }
-    #fightingSandboxBar { display: none !important; }
+    body.fightingRebuild #fightingSandboxBar { display: flex !important; top: max(58px, 12%); bottom: auto;
+      width: min(360px, 58vw); gap: 3px; padding: 4px; border-radius: 6px; }
+    body.fightingRebuild #fightingSandboxBar strong,
+    body.fightingRebuild #sandboxRestart { display: none; }
+    body.fightingRebuild #fightingSandboxBar button { flex: 1 1 0; min-width: 0; min-height: 34px;
+      padding: 5px 3px; font-size: 10px; }
     #hint { display: none; }
     .bars { top: max(2%, env(safe-area-inset-top)); width: 39%; padding: 5px 7px 4px; }
     .name { font-size: 12px; font-weight: 800; margin-bottom: 3px; }
@@ -109,6 +114,12 @@
   body.touchPreview #touchPause { display: block; }
   body.touchPreview #touchControls { display: block; }
   body.touchPreview #fightingSandboxBar { display: none !important; }
+  body.touchPreview.fightingRebuild #fightingSandboxBar { display: flex !important; top: max(58px, 12%); bottom: auto;
+    width: min(360px, 58vw); gap: 3px; padding: 4px; border-radius: 6px; }
+  body.touchPreview.fightingRebuild #fightingSandboxBar strong,
+  body.touchPreview.fightingRebuild #sandboxRestart { display: none; }
+  body.touchPreview.fightingRebuild #fightingSandboxBar button { flex: 1 1 0; min-width: 0; min-height: 34px;
+    padding: 5px 3px; font-size: 10px; }
   body.touchPreview #hint { display: none; }
 
   /* ---------- Screens ---------- */
@@ -205,7 +216,7 @@
     .homeActions { grid-template-columns: 1fr; max-height: 55vh; overflow-y: auto; padding: 0 4px 6px; }
   }
 </style>
-  <script type="module" crossorigin src="./assets/index-CvOcgmWC.js"></script>
+  <script type="module" crossorigin src="./assets/index-CKogg0XC.js"></script>
 </head>
 <body>
 <div id="app">
@@ -227,8 +238,8 @@
         <div class="weapon" id="wpnR"></div>
       </div>
       <div id="hint">SPACE / E = FORWARD · TAP SPACE / Q = BACK · CLICK + DRAG = WEAPON · HIGH = SLICE · LOW = STAB · PULL IN = ANGLE DOWN · MOVE AWAY = BREAK FREE · SHIFT + WASD = SHIELD · ESC = PAUSE</div>
-      <div id="fightingSandboxBar" class="hidden" aria-label="Fighting rebuild weapon selector">
-        <strong>360° REBUILD</strong>
+      <div id="fightingSandboxBar" class="hidden" aria-label="Choose weapon for live fighting sandbox">
+        <strong>LIVE FIGHT · CHOOSE WEAPON</strong>
         <button id="sandboxDagger" type="button">DAGGER</button>
         <button id="sandboxSword" type="button">SWORD</button>
         <button id="sandboxMace" type="button">MACE</button>
